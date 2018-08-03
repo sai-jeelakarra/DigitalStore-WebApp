@@ -1,0 +1,274 @@
+.demo-list-two {
+  width: 300px;
+}
+
+.ds-fab{
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+}
+
+.login-cover{
+    background: #fff;
+    position: fixed;
+    top:0;
+    left: 0;
+    width: 100%;
+    height:100vh;
+    z-index: 800;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#loginProgress{
+    display: none;
+    top:20px;
+    left: 0;
+    right: 0;
+    position: relative;
+}
+
+#loginError{
+    display: none;
+}
+
+
+
+.signup-cover{
+    background: #fff;
+    position: fixed;
+    top:0;
+    left: 0;
+    width: 100%;
+    height:100vh;
+    z-index: 800;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#signupProgress{
+    display: none;
+    top:20px;
+    left: 0;
+    right: 0;
+    position: relative;
+}
+
+#signupError{
+    display: none;
+}
+
+
+
+.forgotpassword-cover{
+    background: #fff;
+    position: fixed;
+    top:0;
+    left: 0;
+    width: 100%;
+    height:100vh;
+    z-index: 800;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#resetProgress{
+    display: none;
+    top:20px;
+    left: 0;
+    right: 0;
+    position: relative;
+}
+
+
+#signupLogin{
+    display: none;
+}
+
+
+
+
+#logoutBtn{
+    margin-left: 20px;
+}
+
+
+
+.demo-card-square.mdl-card {
+  width: 320px;
+  height: 420px;
+}
+.demo-card-square > .mdl-card__title {
+  color: #fff;
+  background: bottom right 15% no-repeat #FFFFFF;
+}
+
+#listitem,#uploadlistitem{
+    display: none;
+    background: #fff;
+    position: fixed;
+    top:0;
+    left: 0;
+    width: 100%;
+    height:100vh;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: scroll;
+}
+
+.infopic{
+    overflow: hidden;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    max-height:230px ;
+}
+
+#infopicval,#upload-infopicval{
+    top: 100px;
+    left: 0;
+    right: 0;
+    margin-top: 200px;
+}
+
+.mdl-card__supporting-text > td{
+   width:50%;
+}
+table{
+    width: 100%;
+    height: 100%;
+}
+
+.listbutton{
+   margin-right: 20px;
+   width: 90%;
+}
+
+#goback,#upload-goback{
+    padding: 10px;
+display:block;
+text-align:center;
+position: fixed;
+top: 80px;
+right: 50px;
+cursor: pointer;
+}
+
+
+.fill-button{
+    background-color: #fff;
+    border: 1px solid black;
+    border-radius: 30px; /* Green */
+    color: black;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    margin-right: 8px;
+    cursor: pointer;
+    padding-top:10px;
+    padding-bottom: 10px;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+.fill-button-title{
+    background-color: #fff;
+    border: 1px solid #fff;
+    border-radius: 30px; /* Green */
+    color: black;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 24px;
+    margin: 4px 2px;
+    margin-right: 16px;
+    cursor: pointer;
+    padding-top:10px;
+    padding-bottom: 10px;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+
+.fill-button:hover{
+    background-color: #6200EE;
+    border: 1px solid #6200EE;
+    color: white;
+}
+
+button:active {
+    outline: none;
+    }
+    
+    button:focus {outline:0;}
+
+    td{
+        float: left;
+    }
+
+
+    
+.imgupload{ 
+    position: absolute;
+   z-index: 1000;
+   opacity: 0;
+   cursor: pointer;
+   right: 0;
+   top: 0;
+   height: 100%;
+   font-size: 24px;
+   width: 100%;
+}
+
+.imguploadbg{
+   padding:5px 10px;
+   background-image:url("https://d30y9cdsu7xlg0.cloudfront.net/png/396915-200.png");
+   border:1px solid #00ad2d;
+   position:relative;
+   color:#fff;
+   border-radius:2px;
+   text-align:center;
+   float:left;
+   width:180px;
+   height:180px;
+   cursor:pointer;
+   margin: 10px;
+}
+
+.uploadedImg{
+   padding:5px 10px;
+   border:1px solid #00ad2d;
+   position:relative;
+   color:#fff;
+   border-radius:2px;
+   text-align:center;
+   float:left;
+   width:180px;
+   height:180px;
+   cursor:pointer;
+   margin: 10px;
+}
+
+img{
+   width: 180px;
+   height: 180px;
+}
+  
+.infopic{
+    height: 320px;
+}
+
+#listpics{
+    margin-top:120px;
+}

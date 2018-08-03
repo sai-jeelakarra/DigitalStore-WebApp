@@ -1,0 +1,454 @@
+<!Doctype html>
+<html>
+   <head>
+    
+       <title>Digital Store</title>
+    
+       <link rel="stylesheet" href="mystyles.css">
+
+       <!-- importing material design lite-->
+       <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+       <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.teal-green.min.css" />
+       <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+
+       <!--Webapp Icon-->
+        <link rel="shortcut icon" href="logo.ico" />
+
+    </head>
+    
+    
+    
+    
+    <body>
+
+        <!--Hiding 000webhostapp credits from webpage-->
+
+        <style>
+       img[src="https://cdn.rawgit.com/000webhost/logo/e9bd13f7/footer-powered-by-000webhost-white2.png"]{
+           display: none;
+       }
+        
+        </style>
+
+        <!--Login Dialogue -->
+        
+        <dialog id="loginDialog" class="mdl-dialog">
+                <h4 class="mdl-dialog__title">Sign In</h4>
+                    <div class="mdl-dialog__content">
+
+                        <p id="loginError"></p>
+
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                            <input class="mdl-textfield__input" type="text" id="loginEmail">
+                            <label class="mdl-textfield__label" for="sample3">Email</label>
+                          </div>
+
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                            <input class="mdl-textfield__input" type="password" id="loginPassword">
+                            <label class="mdl-textfield__label" for="sample3">Password</label>
+                          </div>
+
+
+                    </div>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <td><button id="forogotpassword" class="mdl-button mdl-js-button mdl-js-ripple-effect">
+                                    Forgot Password
+                                  </button></td>
+                                <td><button id="btnSignup" class="mdl-button mdl-js-button mdl-js-ripple-effect">
+                                    SignUp
+                                  </button></td>
+                                </tr>
+                                </thead>
+                                </table>
+
+
+                    <div id="loginBtn" class="mdl-dialog__actions">
+                          <button style="width: 100%;" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">SIGN IN</button>
+                          <div id="loginProgress" class="mdl-spinner mdl-js-spinner is-active"></div>
+                      </div>
+
+
+              </dialog>
+        
+
+        <!--Signup dialogue-->
+
+        <dialog id="signupDialog" class="mdl-dialog">
+        <h4 class="mdl-dialog__title">Sign Up</h4>
+            <div class="mdl-dialog__content">
+
+                <p id="signupError"></p>
+
+                <div class="signupHide mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <input class="mdl-textfield__input" type="text" id="signupEmail">
+                    <label class="mdl-textfield__label" for="sample3">Email</label>
+                    </div>
+
+                <div class="signupHide mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <input class="mdl-textfield__input" type="password" id="signupPassword">
+                    <label class="mdl-textfield__label" for="sample3">Password</label>
+                    </div>
+
+                    <div class="signupHide mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <input class="mdl-textfield__input" type="password" id="signupRePassword">
+                    <label class="mdl-textfield__label" for="sample3">Confirm Password</label>
+                    </div>
+
+
+            </div>
+
+
+
+            <table>
+                <thead>
+                    <tr>
+                            <td><button class="mdl-button mdl-js-button mdl-js-ripple-effect">
+                                    Registered User?
+                                    </button></td>
+                        <td><button id="btnSignin" class="mdl-button mdl-js-button mdl-js-ripple-effect">
+                            SignIn
+                            </button></td>
+                        </tr>
+                        </thead>
+                        </table>
+
+
+            <div id="signupBtn" class="signupHide mdl-dialog__actions">
+                    <button style="width: 100%;" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">SIGN UP</button>
+                    <div id="signupProgress" class="mdl-spinner mdl-js-spinner is-active"></div>
+                </div>
+
+
+
+<!-- 
+                <table id="signupLogin">
+                    <thead>
+                        <tr>   
+                            <td><button style="width: 100%;" id="backlogin" class="mdl-button mdl-js-button mdl-js-ripple-effect">
+                                    <i class="material-icons">
+                                            arrow_back
+                                            </i> Back to Login
+                                </button></td>
+                            </tr>
+                            </thead>
+                            </table> -->
+
+
+        </dialog>
+
+
+        <!--Forgot Password Dialogue-->
+
+        <dialog id="forgotpasswordDialog" class="mdl-dialog">
+            <h4 class="mdl-dialog__title"><font size="5.5">Forgot Password?</font></h4>
+                <div class="mdl-dialog__content">
+
+                    <p id="forgotpasswordError">We just need your registered Email Id to sent you password reset instructions.</p>
+
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                        <input class="mdl-textfield__input" type="text" id="forgotpasswordEmail">
+                        <label class="mdl-textfield__label" for="sample3">Email</label>
+                        </div>
+
+
+                </div>
+
+                <table>
+                    <thead>
+                        <tr>
+                            
+                            <td><button style="width: 100%;" id="backlogin" class="mdl-button mdl-js-button mdl-js-ripple-effect">
+                                    <i class="material-icons">
+                                            arrow_back
+                                            </i> Back to Login
+                                </button></td>
+                            </tr>
+                            </thead>
+                            </table>
+
+
+                <div id="resetpasswordBtn" class="mdl-dialog__actions">
+                        <button style="width: 100%;" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Reset PASSWORD</button>
+                        <div id="resetProgress" class="mdl-spinner mdl-js-spinner is-active"></div>
+                    </div>
+
+
+            </dialog>
+
+
+            <!--Login Cover-->
+        <div class="login-cover">
+        
+            <!-- MDL Spinner Component -->
+            <div class="page-loader mdl-spinner mdl-js-spinner is-active"></div>
+                    
+        </div>
+
+            <!--SignUp Cover-->
+
+        <div class="signup-cover">
+        
+            <!-- MDL Spinner Component -->
+            <div class="page-loader mdl-spinner mdl-js-spinner is-active"></div>
+                    
+                    </div>
+        
+            <!--Forgot Password Cover-->
+        <div class="forgotpassword-cover">
+        
+            <!-- MDL Spinner Component -->
+            <div class="page-loader mdl-spinner mdl-js-spinner is-active"></div>                            
+        </div>
+
+
+
+        <!-- Always shows a header, even in smaller screens. -->
+        <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+           <header class="mdl-layout__header">
+                <div class="mdl-layout__header-row">
+            <!-- Title -->
+            <span class="mdl-layout-title">Digital Store</span>
+            <!-- Add spacer, to align navigation to the right -->
+            <div class="mdl-layout-spacer"></div>
+            <!-- Navigation. We hide it in small screens. -->
+            <nav class="mdl-navigation mdl-layout--large-screen-only">
+                
+                <!--Upload one or more images to firebase-->
+                <button id="uploadBtn" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+                <i class="material-icons">
+                        cloud_upload
+                </i> Upload
+                </button>
+        
+                <!--Logout button-->
+                <button id="logoutBtn" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+                        <i class="material-icons">
+                                account_circle
+                                </i> Logout
+                </button>
+            </nav>
+            </div>
+            </header>
+    
+            <div class="mdl-layout__drawer">
+            <span class="mdl-layout-title">Digital Store</span>
+            <nav class="mdl-navigation">
+            <a id="drawerupload" class="mdl-navigation__link" href="">Upload</a>
+            <a id="drawerLogout" class="mdl-navigation__link" href="">Logout</a>
+            </nav>
+        </div>
+  
+        <main class="mdl-layout__content">
+            <div class="page-content">
+                <!-- Your content goes here -->
+            
+            
+            <div id="list" class="mdl-grid">
+            </div>
+                <div id="listitem">
+
+                    <i id="goback" class="material-icons"> clear </i>
+                   
+                            <div>
+
+                                <img id="infopicval" src="logo.ico" width="320px" height="420px" />
+                            
+                                <div> 
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <td><button class="fill-button-title">Gender</button></td>
+                                                <td> <button class="fill-button" id="male">Male</button> </td>
+                                                <td> <button class="fill-button" id="female">Female</button> </td>
+                                           </tr>
+                                            </thead>
+                                            </table>
+
+                                            
+                                    <table>
+                                            <thead>
+                                            <tr>
+                                                <td><button class="fill-button-title">Category</button></td>
+                                                <td> <button class="fill-button" id="top">Top</button> </td>
+                                                <td> <button class="fill-button" id="accessories">Accessories</button> </td>
+                                                <td> <button class="fill-button" id="bottom">Bottom</button> </td>
+                                            <td> <button class="fill-button" id="footwear">Footwear</button> </td>
+                                            </tr>
+                                            </thead>
+                                            </table>
+
+                                            
+                                    <table>
+                                            <thead>
+                                            <tr>
+                                                <td><button class="fill-button-title">Style</button></td>
+                                                <td> <button class="fill-button" id="formal">Formal</button> </td>
+                                                <td> <button class="fill-button" id="casual">Casual</button> </td>
+                                                <td> <button class="fill-button" id="party">Party</button> </td>
+                                            <td> <button class="fill-button" id="special">Special</button> </td>
+                                            </tr>
+                                            </thead>
+                                            </table>
+
+                                            
+                                    <table>
+                                            <thead>
+                                            <tr>
+                                                <td><button class="fill-button-title">Brand</button></td>
+                                                <td> <button class="fill-button" id="levis">Levis</button> </td>
+                                                <td> <button class="fill-button" id="denim">Denim</button> </td>
+                                            </tr>
+                                            </thead>
+                                            </table>
+
+                                            
+                                    <table>
+                                            <thead>
+                                            
+                                            <tr>
+                                                <td><button class="fill-button-title">Size</button></td>
+                                                
+                                                <td> <button class="fill-button" id="xs">XS</button> </td>
+                                                <td> <button class="fill-button" id="s">S</button> </td>
+                                                
+                                                <td> <button class="fill-button" id="m">M</button> </td>
+                                                <td> <button class="fill-button" id="l">L</button> </td>
+                                                
+                                                <td> <button class="fill-button" id="xl">XL</button> </td>
+                                                <td> <button class="fill-button" id="xxl">XXL</button> </td>
+                                                
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+                                <div id="updatebtn" class="mdl-card__actions mdl-card--border">
+                                        <button  class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">UPDATE DETAILS</button>
+                                </div>
+                            </div>
+                   
+                    </div>
+
+                <div id="uploadlistitem">
+
+
+                    <i id="upload-goback" class="material-icons"> clear </i>
+                               
+                                    <div>
+                    
+                                            <div id="listpics"></div>
+                                            <div class="imguploadbg">
+                                            <input class="imgupload" type="file" id="file" name="file" multiple/>
+                                        </div>
+                                    
+                                        <div> 
+                                            <table>
+                                                <thead>
+                                                    <tr>
+                                                        <td><button class="fill-button-title">Gender</button></td>
+                                                        <td> <button class="fill-button" id="upload-male">Male</button> </td>
+                                                        <td> <button class="fill-button" id="upload-female">Female</button> </td>
+                                                        
+                                            
+                                                    </tr>
+                                                    </thead>
+                                                    </table>
+                    
+                                                    
+                                            <table>
+                                                    <thead>
+                                                    <tr>
+                                                        <td><button class="fill-button-title">Category</button></td>
+                                                        <td> <button class="fill-button" id="upload-top">Top</button> </td>
+                                                        <td> <button class="fill-button" id="upload-accessories">Accessories</button> </td>
+                                                        <td> <button class="fill-button" id="upload-bottom">Bottom</button> </td>
+                                                    <td> <button class="fill-button" id="upload-footwear">Footwear</button> </td>
+                                                    </tr>
+                                                    </thead>
+                                                    </table>
+                    
+                                                    
+                                            <table>
+                                                    <thead>
+                                                    <tr>
+                                                        <td><button class="fill-button-title">Style</button></td>
+                                                        <td> <button class="fill-button" id="upload-formal">Formal</button> </td>
+                                                        <td> <button class="fill-button" id="upload-casual">Casual</button> </td>
+                                                        <td> <button class="fill-button" id="upload-party">Party</button> </td>
+                                                    <td> <button class="fill-button" id="upload-special">Special</button> </td>
+                                                    </tr>
+                                                    </thead>
+                                                    </table>
+                    
+                                                    
+                                            <table>
+                                                    <thead>
+                                                    <tr>
+                                                        <td><button class="fill-button-title">Brand</button></td>
+                                                        <td> <button class="fill-button" id="upload-levis">Levis</button> </td>
+                                                        <td> <button class="fill-button" id="upload-denim">Denim</button> </td>
+                                                    </tr>
+                                                    </thead>
+                                                    </table>
+                    
+                                                    
+                                            <table>
+                                                    <thead>
+                                                    
+                                                    <tr>
+                                                        <td><button class="fill-button-title">Size</button></td>
+                                                        
+                                                        <td> <button class="fill-button" id="upload-xs">XS</button> </td>
+                                                        <td> <button class="fill-button" id="upload-s">S</button> </td>
+                                                        
+                                                        <td> <button class="fill-button" id="upload-m">M</button> </td>
+                                                        <td> <button class="fill-button" id="upload-l">L</button> </td>
+                                                        
+                                                        <td> <button class="fill-button" id="upload-xl">XL</button> </td>
+                                                        <td> <button class="fill-button" id="upload-xxl">XXL</button> </td>
+                                                        
+                                                    </tr>
+                                                </thead>
+                                            </table>
+                                        </div>
+                                        <div id="upload-updatebtn" class="mdl-card__actions mdl-card--border">
+                                                <button  class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">UPDATE DETAILS</button>
+                                            <!-- <a class="mdl-button  mdl-button--colored mdl-js-button mdl-js-ripple-effect">UPDATE DETAILS</a> -->
+                                        </div>
+                                    </div>
+                            
+                            </div>
+
+
+            </div>
+        </main>
+        </div>
+        
+      
+        <!--Importing Jquerry-->
+        <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+        
+          <script type="text/javascript" src="index.js"></script>
+        
+            <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyAgEm-UVgyIjTE3eg8NIbcc9lXgjDbLXag",
+    authDomain: "try-me-4658c.firebaseapp.com",
+    databaseURL: "https://try-me-4658c.firebaseio.com",
+    projectId: "try-me-4658c",
+    storageBucket: "try-me-4658c.appspot.com",
+    messagingSenderId: "470310099434"
+  };
+  firebase.initializeApp(config);
+</script>
+                             
+        
+
+        
+        
+    </body>
+</html>
